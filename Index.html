@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AKASH — Science Lab</title>
+<meta name="description" content="AKASH — a personal futuristic science lab. Astronomy, physics, chemistry, biology, AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══════════ LOADING SCREEN ═══════════ -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-logo">AKASH</div>
+    <div class="loader-sub">SCIENCE&nbsp;LAB</div>
+    <div class="loader-bar"><span></span></div>
+  </div>
+</div>
+
+<!-- pointer glow (desktop) -->
+<div id="cursorGlow" aria-hidden="true"></div>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<header id="navbar">
+  <nav class="nav-wrap" aria-label="Main navigation">
+    <a href="#home" class="nav-brand"><span class="brand-dot"></span>AKASH<span class="brand-lab">/LAB</span></a>
+    <button id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-list" id="nav-list">
+      <li><a href="#home" class="nav-link">HOME</a></li>
+      <li><a href="#science-lab" class="nav-link">SCIENCE LAB</a></li>
+      <li><a href="#minilab" class="nav-link">MINI LAB</a></li>
+      <li><a href="#about" class="nav-link">ABOUT</a></li>
+      <li><a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener" class="nav-link nav-github js-github">GITHUB</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section id="home" class="hero">
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+  <canvas id="bhCanvas" aria-hidden="true"></canvas>
+  <div class="hero-vignette" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow reveal">◈ PERSONAL SCIENCE LABORATORY</div>
+    <h1 class="hero-title reveal">AKASH</h1>
+    <p class="hero-tagline reveal">Curious mind. Future explorer.</p>
+    <p class="hero-desc reveal">
+      A student diving deep into the universe — from black holes and quantum
+      physics to chemical reactions, living systems, and artificial intelligence.
+      This is my corner of the cosmos.
+    </p>
+    <div class="hero-btns reveal">
+      <a href="#science-lab" class="btn btn-primary" id="btn-enter">ENTER THE LAB</a>
+      <a href="#about" class="btn btn-ghost" id="btn-story">MY STORY</a>
+      <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener" class="btn btn-ghost js-github">GITHUB</a>
+      <a href="#minilab" class="btn btn-ghost" id="btn-explore">EXPLORE</a>
+    </div>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true"><span></span></div>
+</section>
+
+<!-- ═══════════ SCIENCE LAB ═══════════ -->
+<section id="science-lab" class="section">
+  <div class="section-head reveal">
+    <div class="section-eyebrow">SECTOR 01</div>
+    <h2 class="section-title">SCIENCE <span class="grad-text">LAB</span></h2>
+    <p class="section-sub">Five fields. One curiosity. Click a module to open it.</p>
+  </div>
+
+  <div class="lab-grid">
+    <button class="lab-card reveal" data-lab="astronomy">
+      <div class="lab-icon">✦</div>
+      <h3>ASTRONOMY</h3>
+      <p>Black holes, galaxies, and the physics of everything above.</p>
+      <span class="lab-open">OPEN MODULE →</span>
+    </button>
+    <button class="lab-card reveal" data-lab="physics">
+      <div class="lab-icon">◉</div>
+      <h3>PHYSICS</h3>
+      <p>Motion, energy, quantum weirdness, and the laws of nature.</p>
+      <span class="lab-open">OPEN MODULE →</span>
+    </button>
+    <button class="lab-card reveal" data-lab="chemistry">
+      <div class="lab-icon">⚗</div>
+      <h3>CHEMISTRY</h3>
+      <p>Atoms, bonds, and the beautiful reactions between them.</p>
+      <span class="lab-open">OPEN MODULE →</span>
+    </button>
+    <button class="lab-card reveal" data-lab="biology">
+      <div class="lab-icon">❋</div>
+      <h3>BIOLOGY</h3>
+      <p>Cells, DNA, evolution — the code of life itself.</p>
+      <span class="lab-open">OPEN MODULE →</span>
+    </button>
+    <button class="lab-card reveal" data-lab="ai">
+      <div class="lab-icon">⌬</div>
+      <h3>ARTIFICIAL INTELLIGENCE</h3>
+      <p>Machines that learn, think, and reshape our future.</p>
+      <span class="lab-open">OPEN MODULE →</span>
+    </button>
+  </div>
+</section>
+
+<!-- ═══════════ DID YOU KNOW ═══════════ -->
+<section id="facts" class="section section-narrow">
+  <div class="section-head reveal">
+    <div class="section-eyebrow">SECTOR 02</div>
+    <h2 class="section-title">DID YOU <span class="grad-text">KNOW?</span></h2>
+  </div>
+  <div class="fact-box reveal">
+    <div class="fact-quote">“</div>
+    <p id="factText">Loading a fact from the universe…</p>
+    <button class="btn btn-primary" id="factBtn">NEW FACT</button>
+  </div>
+</section>
+
+<!-- ═══════════ MINI LAB ═══════════ -->
+<section id="minilab" class="section">
+  <div class="section-head reveal">
+    <div class="section-eyebrow">SECTOR 03</div>
+    <h2 class="section-title">MINI <span class="grad-text">LAB</span></h2>
+    <p class="section-sub">Three interactive experiments. Play them all.</p>
+  </div>
+
+  <!-- GAME 1 — ORBITAL RUN -->
+  <div class="game reveal">
+    <div class="game-head">
+      <h3>▸ GAME 01 — ORBITAL RUN</h3>
+      <p>Pilot the spacecraft with <b>Arrow keys / WASD</b> or the touch pad. Collect all <b>3 energy nodes</b>.</p>
+    </div>
+    <div class="game-body">
+      <div class="game-stage">
+        <canvas id="orbCanvas" width="480" height="340" aria-label="Orbital Run game area"></canvas>
+        <div class="game-msg" id="g1Msg" role="status"></div>
+      </div>
+      <div class="game-side">
+        <div class="hud">ENERGY NODES: <span id="g1Score">0</span> / 3</div>
+        <button class="btn btn-small" id="g1Reset">RESET</button>
+        <div class="touchpad" aria-label="Touch controls">
+          <button class="tp-btn tp-up" data-dir="up" aria-label="Move up">▲</button>
+          <div class="tp-mid">
+            <button class="tp-btn" data-dir="left" aria-label="Move left">◀</button>
+            <button class="tp-btn" data-dir="down" aria-label="Move down">▼</button>
+            <button class="tp-btn" data-dir="right" aria-label="Move right">▶</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAME 2 — ATOM BUILDER -->
+  <div class="game reveal">
+    <div class="game-head">
+      <h3>▸ GAME 02 — ATOM BUILDER</h3>
+      <p>Build <b>CARBON-12</b>: 6 protons · 6 neutrons · 6 electrons. Adjust the counts below.</p>
+    </div>
+    <div class="game-body">
+      <div class="game-stage atom-stage">
+        <canvas id="atomCanvas" width="300" height="300" aria-label="Atom visualization"></canvas>
+        <div class="game-msg" id="g2Msg" role="status"></div>
+      </div>
+      <div class="game-side atom-controls">
+        <div class="ctrl-row">
+          <span class="ctrl-label p-color">PROTONS</span>
+          <button class="ctrl-btn" data-type="p" data-delta="-1" aria-label="Remove proton">−</button>
+          <span class="ctrl-val" id="pVal">0</span>
+          <button class="ctrl-btn" data-type="p" data-delta="1" aria-label="Add proton">+</button>
+        </div>
+        <div class="ctrl-row">
+          <span class="ctrl-label n-color">NEUTRONS</span>
+          <button class="ctrl-btn" data-type="n" data-delta="-1" aria-label="Remove neutron">−</button>
+          <span class="ctrl-val" id="nVal">0</span>
+          <button class="ctrl-btn" data-type="n" data-delta="1" aria-label="Add neutron">+</button>
+        </div>
+        <div class="ctrl-row">
+          <span class="ctrl-label e-color">ELECTRONS</span>
+          <button class="ctrl-btn" data-type="e" data-delta="-1" aria-label="Remove electron">−</button>
+          <span class="ctrl-val" id="eVal">0</span>
+          <button class="ctrl-btn" data-type="e" data-delta="1" aria-label="Add electron">+</button>
+        </div>
+        <div class="hud" id="g2Target">TARGET: C-12 → p⁶ n⁶ e⁶</div>
+        <button class="btn btn-small" id="g2Reset">RESET</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAME 3 — REACTION LAB -->
+  <div class="game reveal">
+    <div class="game-head">
+      <h3>▸ GAME 03 — REACTION LAB</h3>
+      <p>Read the equation. Pick the correct product.</p>
+    </div>
+    <div class="game-body">
+      <div class="game-stage rxn-stage">
+        <div class="rxn-q" id="g3Q">Loading…</div>
+        <div class="rxn-opts" id="g3Opts"></div>
+        <div class="rxn-expl" id="g3Msg" role="status"></div>
+      </div>
+      <div class="game-side">
+        <div class="hud">SCORE: <span id="g3Score">0</span> / <span id="g3Total">4</span></div>
+        <button class="btn btn-small" id="g3Next" disabled>NEXT →</button>
+        <button class="btn btn-small" id="g3Reset">REPLAY</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<section id="about" class="section">
+  <div class="section-head reveal">
+    <div class="section-eyebrow">SECTOR 04</div>
+    <h2 class="section-title">MY <span class="grad-text">STORY</span></h2>
+  </div>
+  <div class="about-wrap reveal">
+    <div class="avatar" aria-label="AKASH avatar">
+      <div class="avatar-core">A</div>
+      <div class="avatar-ring r1"></div>
+      <div class="avatar-ring r2"></div>
+      <div class="avatar-glow"></div>
+    </div>
+    <div class="about-text">
+      <p>I'm <b>Akash</b> — a student who has been asking "why?" since before I could spell it.
+      As a kid I would stare at the night sky and wonder what was holding it all together.
+      That curiosity never left. It just got bigger.</p>
+      <p>Today I explore <b>astronomy</b> to understand where we are, <b>physics</b> to understand
+      how it all works, <b>chemistry</b> to see what everything is made of, <b>biology</b> to
+      understand life, and <b>artificial intelligence</b> to build a piece of that future myself.</p>
+      <p>This site is my lab — a place where I turn curiosity into code, equations into
+      experiments, and questions into small games. I'm just getting started.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="footer-brand">AKASH <span>/</span> SCIENCE LAB</div>
+  <p class="footer-line">Built with curiosity · 2026</p>
+  <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener" class="footer-github js-github">GitHub →</a>
+</footer>
+
+<!-- ═══════════ MODAL ═══════════ -->
+<div id="labModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel">
+    <button class="modal-close" data-close aria-label="Close">✕</button>
+    <div class="modal-icon" id="modalIcon">✦</div>
+    <h3 id="modalTitle">MODULE</h3>
+    <p id="modalBody"></p>
+    <div class="modal-tags" id="modalTags"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
